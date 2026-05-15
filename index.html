@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Szobafestés, Mázolás és Kőműves munkák Fejér megye - Kovács Attila E.V.</title>
+    <meta name="description" content="Profi szobafestés, mázolás, hőszigetelés és kőműves munkák Fejér megyében. Ingyenes felmérés és garancia Kovács Attilától.">
+    <meta name="keywords" content="szobafestés, hőszigetelés, térkövezés, mázolás, kőműves, Fejér megye, Székesfehérvár, Kovács Attila">
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; background-color: #f4f4f4; }
+        
+        header { background: #2c3e50; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: space-around; align-items: center; max-width: 1200px; margin: auto; padding: 0 20px; }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: color 0.3s; }
+        nav a:hover { color: #e67e22; }
+
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('IMG_1169.jpeg') center/cover; height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; }
+
+        section { padding: 60px 0; border-bottom: 1px solid #ddd; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2.5rem; color: #2c3e50; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .service-card { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .gallery-item { border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; transition: opacity 0.3s; height: 200px; background-color: #ddd; }
+        .gallery-item:hover { opacity: 0.8; transform: scale(1.02); transition: all 0.3s; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        #velemenyek { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 20px 0; }
+
+        .cta-button { display: inline-block; background: #e67e22; color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; transition: background 0.3s; }
+        .cta-button:hover { background: #d35400; }
+
+        #imageModal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        #modalImg { max-width: 90%; max-height: 85%; border-radius: 5px; }
+
+        footer { background: #2c3e50; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { flex-direction: column; text-align: center; }
+            nav a { margin: 8px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#kezdolap">Kezdőlap</a>
+            <a href="#szolgaltatasok">Szolgáltatások</a>
+            <a href="#galeria">Referenciák</a>
+            <a href="#velemenyek">Vélemények</a>
+            <a href="#kapcsolat">Kapcsolat</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="kezdolap">
+        <h1>Kovács Attila E.V.</h1>
+        <p>Profi szobafestés, mázolás és kőműves munkák garanciával</p>
+        <a href="#kapcsolat" class="cta-button">Ingyenes felmérés</a>
+    </div>
+
+    <div class="container">
+        <section id="szolgaltatasok">
+            <div class="section-title"><h2>Szolgáltatások</h2></div>
+            <div class="services-grid">
+                <div class="service-card"><h3>Szobafestés</h3><p>Minőségi festés, glettelés és tapétázás.</p></div>
+                <div class="service-card"><h3>Kőműves munkák</h3><p>Vakolás, betonozás és burkolás.</p></div>
+                <div class="service-card"><h3>Hőszigetelés</h3><p>Homlokzati rendszerek teljes körű kivitelezése.</p></div>
+                <div class="service-card"><h3>Térkövezés</h3><p>Kocsibeállók és járdák szakszerű lerakása.</p></div>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <div class="section-title"><h2>Referenciák</h2></div>
+            <div class="gallery-grid" id="dynamic-gallery">
+                </div>
+        </section>
+
+        <section id="velemenyek">
+            <div class="section-title"><h2>Ügyfélvélemények</h2></div>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = window.location.href;  
+                    this.page.identifier = 'kovacs-attila-ev-final'; 
+                };
+                (function() { 
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://kovacs-attila-ev.disqus.com/embed.js'; 
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        </section>
+
+        <section id="kapcsolat">
+            <div class="section-title"><h2>Kapcsolat</h2></div>
+            <div style="text-align: center; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p><strong>Telefon:</strong> <a href="tel:+36301369457" style="color: #e67e22; text-decoration: none; font-size: 1.2rem;">+36 30 136 9457</a></p>
+                <p><strong>E-mail:</strong> atesz7774@gmail.com</p>
+                <p><strong>Munkaterület:</strong> Fejér megye és környéke</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="imageModal" onclick="this.style.display='none'">
+        <img id="modalImg">
+    </div>
+
+    <script>
+        // Képek automatikus betöltése a megadott tartományban
+        const galleryContainer = document.getElementById('dynamic-gallery');
+        const startIdx = 1169;
+        const endIdx = 1286;
+
+        for (let i = startIdx; i <= endIdx; i++) {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            
+            const img = document.createElement('img');
+            // Először megpróbáljuk JPEG-ként
+            img.src = `IMG_${i}.jpeg`;
+            img.alt = `Kovács Attila Referencia ${i}`;
+            img.onclick = function() { openFull(this); };
+            
+            // Ha hiba van (pl. nem létezik a .jpeg), megpróbáljuk .png-ként
+            img.onerror = function() {
+                if (this.src.includes('.jpeg')) {
+                    this.src = `IMG_${i}.png`;
+                } else {
+                    // Ha egyik formátum sincs meg, elrejtjük a keretet
+                    this.parentElement.style.display = 'none';
+                }
+            };
+
+            item.appendChild(img);
+            galleryContainer.appendChild(item);
+        }
+
+        function openFull(img) {
+            document.getElementById("modalImg").src = img.src;
+            document.getElementById("imageModal").style.display = "flex";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2026 Kovács Attila E.V. - Minden jog fenntartva.</p>
+    </footer>
+
+</body>
+</html>
